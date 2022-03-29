@@ -1,6 +1,6 @@
 ---
 app:
-  name: NullX
+  name: OpenDAX
   domain: nullx.com.au
   subdomain: trade
   show_landing: true
