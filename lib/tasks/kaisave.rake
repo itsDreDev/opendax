@@ -3,7 +3,7 @@
 require 'faraday'
 require 'faraday_middleware'
 
-KAISAVE_VERSION = '0.1.34'
+KAISAVE_VERSION = '0.1.30'
 KAISAVE_PATH = 'tmp/kaisave'
 SECRETS_PATH = 'config/secrets.yaml'
 
