@@ -1,16 +1,16 @@
 ---
 app:
-  name: OpenDAX
-  domain: app.local
-  subdomain: www
+  name: OpenNullx
+  domain: nullx.com.au
+  subdomain: trade
   show_landing: true
   opendax_addr: https://www.opendax.cloud
   wizard_enabled: true
 render_protect: false
 csrfEnabled: true
 ssl:
-  enabled: false
-  email: support@example.com
+  enabled: true
+  email: support@nullx.com.au
 updateVersions: false
 images:
   peatio: quay.io/openware/peatio:3.0.13
@@ -54,7 +54,7 @@ storage:
   uploadMaxSize: 20
 twilio:
   enabled: false
-  phone_number: "+15005550000"
+  phone_number: '+15005550000'
   account_sid: changeme
   auth_token: changeme
 gaTrackerKey: ''
@@ -72,28 +72,28 @@ smtp:
   sender_logo: https://storage.googleapis.com/public_peatio/logo.png
 wallets:
   eth:
-  - kind: deposit
-    address: changeme
-    max_balance: 0.0
-    secret: changeme
-  - kind: hot
-    address: changeme
-    max_balance: 100.0
-    secret: changeme
-  - kind: warm
-    address: changeme
-    max_balance: 1000.0
-    secret: changeme
+    - kind: deposit
+      address: changeme
+      max_balance: 0.0
+      secret: changeme
+    - kind: hot
+      address: changeme
+      max_balance: 100.0
+      secret: changeme
+    - kind: warm
+      address: changeme
+      max_balance: 1000.0
+      secret: changeme
   btc:
-  - kind: deposit
-    address: changeme
-    max_balance: 0.0
-  - kind: hot
-    address: changeme
-    max_balance: 100.0
-  - kind: warm
-    address: changeme
-    max_balance: 1000.0
+    - kind: deposit
+      address: changeme
+      max_balance: 0.0
+    - kind: hot
+      address: changeme
+      max_balance: 100.0
+    - kind: warm
+      address: changeme
+      max_balance: 1000.0
 parity:
   network: kovan
   address: parity
@@ -127,7 +127,7 @@ electrumd_ltc:
   testnet: true
   segwit: false
 terraform:
-  credentials: "~/safe/opendax.json"
+  credentials: '~/safe/opendax.json'
   project: example-opendax
   region: europe-west4
   zone: europe-west4-a
