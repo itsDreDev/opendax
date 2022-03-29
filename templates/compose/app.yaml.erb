@@ -40,7 +40,7 @@ services:
     env_file:
       - ../config/finex.env
       - ../config/kaigara.env
-    command: "kaigara ./orderapi"
+    command: "kaigara ./config/orderapi"
     volumes:
       - ../config/finex:/app/config:ro
 
@@ -50,7 +50,7 @@ services:
     env_file:
       - ../config/finex.env
       - ../config/kaigara.env
-    command: "kaigara ./finex"
+    command: "kaigara ./config/finex spot"
     volumes:
       - ../config/finex:/app/config:ro
 

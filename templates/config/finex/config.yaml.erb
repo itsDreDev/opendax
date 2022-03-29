@@ -28,7 +28,9 @@ messaging:
     - name:    finex.influx.writer
 orderbook:
   max_publish_size: 300
+  allow_asserts: true
 gateway:
+  market_buy_mult: 1.05
   rate:
     maker:
       - limit: 500
@@ -49,6 +51,15 @@ gateway:
         period: 24h
 api:
   bulk_limit: 100
+  filters:
+    - type: custom_price_steps
+      rules:
+        - { limit: 10, step: 0.01 }
+        - { limit: 100, step: 0.1 }
+        - { limit: 1000, step: 1 }
+        - { limit: 10000, step: 5 }
+        - { limit: 100000, step: 10 }
+        - { limit: 0, step: 1000 }
   rate:
     maker:
       limit: 500
@@ -72,3 +83,32 @@ api:
     admin:
       min_level: 3
       roles: [admin, superadmin]
+taker_fee_to_maker: true
+allow_probe: true
+forex_service:
+  host: changeme
+  liquidityuser: changeme
+disable_wash_trading: false
+trade_sampler:
+  enabled: true
+user_abilities:
+  trade:
+      min_level: 2
+      roles: [member, broker, trader, maker, admin, superadmin]
+  bulk_api:
+      min_level: 3
+      roles: [maker, admin, superadmin]
+admin_abilities:
+  admin:
+      min_level: 3
+      roles: [admin, superadmin]
+admin_orders:
+  min_level: 3
+  roles: [admin, superadmin]
+admin_deposits:
+  min_level: 3
+  roles: [admin, superadmin]
+admin_withdrawals:
+  min_level: 3
+  roles: [admin, superadmin]
+skip_balance_check: [maker, admin, superadmin]

@@ -9,7 +9,7 @@ namespace :versions do
     end
 
     puts "Fetching latest global versions"
-    response = Faraday.get 'https://raw.githubusercontent.com/openware/versions/master/opendax/2-6/versions.yaml'
+    response = Faraday.get 'https://raw.githubusercontent.com/openware/versions/master/opendax/master/versions.yaml'
 
     if response.status >= 400 || response.status >= 500
       raise "Error fetching global versions, got #{response.body}"
